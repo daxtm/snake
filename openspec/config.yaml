@@ -3,10 +3,10 @@ schema: spec-driven
 # Project context: what an agent can't infer from the code. Fill in the <placeholders>
 # (or ask OpenCode: "fill in the placeholders in openspec/config.yaml").
 context: |
-  Project: <one sentence: what it does and who uses it>
-  Stack: <language/runtime + version, framework, database, package manager>
-  Runs on: <local CLI, container, AKS, browser, ...>
-  Constraints: <hard limits: platforms, offline, budget, things not to touch>
+  Project: Browser Snake game with rapid keyboard control and basic scoring, played locally in the browser.
+  Stack: Static HTML/CSS/JavaScript client; Node.js 26 + npm for the dev server and tests; Playwright (Chromium) for browser tests; no runtime framework or database.
+  Runs on: Local browser via `npm start` at http://localhost:3000; checks run in CI via scripts/check.sh.
+  Constraints: No backend, saved scores, mobile/touch, or visual polish; Node major 26 toolchain; Playwright is dev/test-only.
   The owner reviews behavior and output rather than code: plain language, observable results.
 
 rules:

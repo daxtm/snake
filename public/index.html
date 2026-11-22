@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Snake</h1>
+      <div id="hud">
+        <span id="score">Score: 0</span>
+        <span id="status" role="status">Press Start to play</span>
+        <button id="start-button" type="button">Start</button>
+      </div>
+      <div
+        id="board"
+        tabindex="0"
+        role="application"
+        aria-label="Snake board. Use the arrow keys to steer the snake."
+      ></div>
+      <p id="instructions">
+        Click Start, then use the arrow keys to steer the snake. Eat food to grow
+        and score one point each. Avoid the walls and your own body.
+      </p>
+    </main>
+    <script type="module" src="game.mjs"></script>
+  </body>
+</html>

@@ -1,22 +1,25 @@
 # snake
 
-<!-- Project facts for OpenCode. Sent with every request: keep it short (under ~30 lines).
-     Ask OpenCode: "fill in the placeholders in AGENTS.md". -->
+<!-- Project facts for OpenCode. Sent with every request: keep it short (under ~30 lines). -->
 
 ## What this is
-<one or two sentences: what it does and who uses it>
+A browser Snake game with rapid keyboard control, basic scoring, and game-over/restart, played at http://localhost:3000 from a static client.
 
 ## Stack
-<language/runtime + version, framework, package manager, database>
+Static HTML/CSS/JavaScript (no runtime framework); Node.js 26 and npm for the dev server and tests; Playwright (Chromium) for browser tests.
 
 ## Checks
 `scripts/check.sh` runs everything (install deps, tests, lint, build); CI runs it on every PR.
 `ock check` runs it on a commit in a clean checkout.
-Run / demo: `<command that shows it working>`
+Run / demo: `npm ci && npm start` → http://localhost:3000 (Start, arrow keys; Up then Left quickly = two successive turns)
 
 ## Layout
-<the 3-6 directories that matter and what lives in each>
+- `public/` — the game: `index.html`, `styles.css`, `engine.mjs` (DOM-independent), `game.mjs` (rendering, input, timer)
+- `scripts/serve.mjs` — local static server (port 3000); `scripts/check.sh` — full check entrypoint
+- `test/unit/` — node:test coverage for the engine and server
+- `tests/browser/` — Playwright coverage for keyboard/focus/scoring behavior
+- `docs/RUNNING.md` — setup, controls, and test commands
 
 ## Rules
 - Specs: `openspec/`. Decisions: `docs/adr/`. Plan: `docs/ROADMAP.md`.
-- <project-specific rules: files not to touch, naming, error handling>
+- Keep the engine DOM-independent; deterministic tests inject fixtures and random sources rather than production hooks.
