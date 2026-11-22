@@ -8,3 +8,4 @@ except to mark it superseded by a newer ADR.
 | ADR | Title | Status | Date |
 |---|---|---|---|
 | [0001](0001-record-architecture-decisions.md) | Record architecture decisions | Accepted | 2026-11-22 |
+| [0002](0002-static-browser-game.md) | Static browser game with real-browser regression tests | Accepted | 2026-11-22 |
